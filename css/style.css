@@ -9,12 +9,18 @@
   --logo-color: #000000;
   --act-button: #188ce8;
   --command-back: #f5f4fa;
+  --client-color: #afb1b8;
   --footer-back: #2f303a;
   --footer-info: rgba(255, 255, 255, 0.6);
+  --join-item-bg: rgba(255, 255, 255, 0.1);
 }
 
 .link {
   text-decoration: none;
+}
+
+svg {
+  fill: currentColor;
 }
 
 .container {
@@ -153,20 +159,41 @@ header {
   color: var(--color-accent);
 }
 
+.contact-item:hover .icon-envelope,
+.contact-item:focus .icon-envelope,
+.contact-item:hover .icon-smartphone,
+.contact-item:focus .icon-smartphone {
+  fill: var(--color-accent);
+}
+
+.icon-envelope,
+.icon-smartphone {
+  margin-right: 10px;
+}
+
 .contact-item {
   color: var(--color-sub-text);
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
 }
 
 /* hero */
 
 .hero {
+  background-image: linear-gradient(
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero-bg.jpg");
   background-color: var(--backfround-hero);
+  background-size: cover;
   padding-top: 200px;
   padding-bottom: 200px;
   text-align: center;
+  max-width: 1600px;
 }
 
 .hero-title {
@@ -212,6 +239,13 @@ header {
   width: 270px;
 }
 
+.advantages-icon {
+  padding: 25px 100px;
+  background: var(--command-back);
+  border-radius: 4px;
+  margin-bottom: 30px;
+}
+
 .advantages-titel {
   font-size: 14px;
   line-height: 1.2;
@@ -228,7 +262,7 @@ header {
 .section-titel {
   font-weight: 700;
   font-size: 36px;
-  line-height: 1.31;
+  line-height: 1.16;
   text-align: center;
 }
 
@@ -290,8 +324,87 @@ header {
   font-size: 16px;
   line-height: 1.18;
   text-align: center;
+  margin-bottom: 16px;
 
   color: var(--color-sub-text);
+}
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-list-item {
+  width: 44px;
+  height: 44px;
+}
+
+.social-list-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-list-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--color-accent);
+  border-radius: 50%;
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--text);
+}
+
+/* client */
+
+.client-title {
+  margin-bottom: 50px;
+}
+
+.client-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  color: var(--client-color);
+}
+
+.client-list-item {
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--client-color);
+  border-radius: 4px;
+}
+
+.client-list-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.client-list-item:hover,
+.client-list-item:focus {
+  border-color: var(--color-accent);
+}
+
+.client-list-item:hover .client-list-icon,
+.client-list-item:focus .client-list-icon {
+  fill: var(--color-accent);
+}
+
+.client-list-icon {
+  width: 106px;
+  height: 60px;
 }
 
 /* footer */
@@ -301,6 +414,10 @@ header {
   padding-top: 60px;
   padding-bottom: 60px;
 }
+.footer-content {
+  display: flex;
+  align-items: baseline;
+}
 
 .white {
   color: var(--text);
@@ -308,6 +425,10 @@ header {
 
 address {
   font-style: normal;
+}
+
+.footer-address {
+  margin-right: 70px;
 }
 
 .footer-logo {
@@ -333,7 +454,47 @@ address {
   line-height: 1.71;
 }
 
+.join-title {
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.join-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.join-social-item {
+  width: 44px;
+  height: 44px;
+  background-color: var(--join-item-bg);
+  border-radius: 50%;
+}
+
+.join-social-item:hover,
+.join-social-item:focus {
+  background-color: var(--color-accent);
+}
+
+.join-social-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.join-social-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--text);
+}
+
 /* portfolio */
+
 .choose-project {
   display: flex;
   justify-content: center;
@@ -360,12 +521,20 @@ address {
 .choose-project-button:active {
   background-color: var(--color-accent);
   color: var(--text);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .project-galary {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+}
+
+.project-galary-item:hover,
+.project-galary-item:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 
 .project-galary-item {
