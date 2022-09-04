@@ -172,12 +172,12 @@ header {
   transition: fill var(--duration-cubic);
 }
 
-.menu-item:hover,
-.menu-item:focus,
+.menu-item-text:hover,
+.menu-item-text:focus,
 .contact-item:hover,
 .contact-item:focus,
-.footer-contact-item:hover,
-.footer-contact-item:focus {
+.footer-contact-link:hover,
+.footer-contact-link:focus {
   color: var(--color-accent);
 }
 
@@ -399,6 +399,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   transition: background-color var(--duration-cubic),
     border-radius var(--duration-cubic);
 }
@@ -413,7 +414,6 @@ header {
 .social-list-link:hover,
 .social-list-link:focus {
   background-color: var(--color-accent);
-  border-radius: 50%;
 }
 
 .social-list-link:hover .social-list-icon,
@@ -454,8 +454,8 @@ header {
   border-color: var(--color-accent);
 }
 
-.client-list-item:hover .client-list-icon,
-.client-list-item:focus .client-list-icon {
+.client-list-link:hover .client-list-icon,
+.client-list-link:focus .client-list-icon {
   fill: var(--color-accent);
 }
 
@@ -507,6 +507,10 @@ address {
   line-height: 2;
 }
 
+.footer-contact-link {
+  transition: color var(--duration-cubic);
+}
+
 .footer-contact-item {
   color: var(--footer-info);
   line-height: 1.71;
@@ -528,13 +532,11 @@ address {
 .join-social-item {
   width: 44px;
   height: 44px;
-  background-color: var(--join-item-bg);
   border-radius: 50%;
-  transition: background-color var(--duration-cubic);
 }
 
-.join-social-item:hover,
-.join-social-item:focus {
+.join-social-link:hover,
+.join-social-link:focus {
   background-color: var(--color-accent);
 }
 
@@ -544,6 +546,9 @@ address {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
+  transition: background-color var(--duration-cubic);
+  background-color: var(--join-item-bg);
 }
 
 .join-social-icon {
@@ -579,7 +584,7 @@ address {
 }
 
 .choose-project-button:hover,
-.choose-project-button:active {
+.choose-project-button:focus {
   background-color: var(--color-accent);
   color: var(--text);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
@@ -628,6 +633,7 @@ address {
   width: 100%;
   height: 100%;
   display: block;
+  transition: box-shadow var(--duration-cubic);
 }
 
 .project-galary-item {
