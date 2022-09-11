@@ -844,6 +844,7 @@ address {
   padding: 12px 16px;
   resize: none;
   color: #000000;
+  display: block;
 }
 
 .modal-form-own-checkbox {
